@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
 
 function include_d {
 	dir=$1
@@ -12,6 +12,6 @@ function include_d {
 	fi
 }
 
-include_d bash_functions
+include_d bash_tweaks
 include_d bash_aliases
 include_d bash_completion

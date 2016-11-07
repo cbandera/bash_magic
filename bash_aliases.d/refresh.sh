@@ -1,1 +1,0 @@
-alias refresh=". $HOME/.bashrc"

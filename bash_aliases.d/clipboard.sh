@@ -7,3 +7,5 @@ alias pbpaste='xsel --clipboard --output'
 
 alias xcopy='xsel --primary --input'
 alias xpaste='xsel --primary --output'
+
+alias clip='xclip -selection c'

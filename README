@@ -1,41 +1,45 @@
+# Bash Magic
+*This repo was originally forked from https://github.com/devonjones/bash_magic*
+
+
 structured bashrc to allow for much easier understanding and handling of what shell changes you have set up.
 
 
-DESIGN
+## Design
 
 Instead of keeping my bashrc all in one file that becomes a giant mess, I've split the file out into a bunch of small shell scripts that the main bashrc automatically imports.  This results in the followingdirectory setup:
 
 ~/.bashrc
 ~/.bash_aliases.d/
 ~/.bash_completion.d/
-~/.bash_functions.d/
+~/.bash_tweaks.d/
 
 The base .bashrc (or can be renamed .bash_profile for those of you that use .bash_profile instead) contains only 4 things:
 
 1) a break for non interactive shells that stops any of it loading
-2) The addition of ~/bin to the path
+2) The addition of ~/.local/bin to the path
 3) definition of the include_d function
 4) imports of the 3 above directories.
 
 Inside each directory, only files with the .sh extension will be sourced.  The directory names are obvious, but I'll detail what's contained just to be complete.
 
 
-BASH_ALIASES.D
+## bash_aliases.d
 
 This directory is intended to hold a bunch of files setting up all of your aliases.  It's preferred to keep only aliases that are closely related in the same file so that other people can easily pick up chucks of your alias behavior without having to import it all.  Personally, I keep one for color terminals, my editor, filesystem commands and then a series of alias files for dealing with individual programs.
 
 
-BASH_COMPLETION.D
+## bash_completion.d
 
 Personally I find bash completion super useful, so I keep a whole directory for dealing with completions.  Timple, one file per program is the expected usage.
 
 
-BASH_FUNCTIONS.D
+## bash_tweaks.d
 
-This directory is much more of a grab bag then the above two.  It contains a seperate file for each discrete functional behavior I'm making to my shell.  Some files contain only actual bash functions, some add functionality like eternal_bash_history.
+This directory is much more of a grab bag then the above two.  It contains a seperate file for each discrete functional behavior I'm making to my shell.
 
 
-USAGE
+## Usage
 
 Until I get around to creating an install program, my suggestion is that you do the following to install this:
 

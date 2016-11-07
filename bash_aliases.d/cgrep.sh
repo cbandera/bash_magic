@@ -7,3 +7,5 @@ function cgrep {
 	arr_pop
 	egrep --color -e "$" -e "$placeholder" ${arr[@]}
 }
+
+alias gr='grep -r'
