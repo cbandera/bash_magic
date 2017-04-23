@@ -22,7 +22,7 @@ alias uc='mrt maintenance credentials update_cache'
 bs() { echo "Sourcing ~/.bash_rc" && . ~/.bashrc; }
 alias be='$EDITOR ~/.bashrc'
 ba() {
-	if [ ! $@ > 1 ]; then
+	if [ ! "$@" -gt "1" ]; then
 		$EDITOR ~/.bash_aliases.d/aliases.sh
 	else
 		BM_ROOT_DIR=$( cd "$(readlink -f $( dirname "${BASH_SOURCE[0]}" ))/.." && pwd );
