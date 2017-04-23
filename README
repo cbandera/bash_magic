@@ -41,22 +41,8 @@ This directory is much more of a grab bag then the above two.  It contains a sep
 
 ## Usage
 
-Until I get around to creating an install program, my suggestion is that you do the following to install this:
+For installation run `install.sh`. This will backup your current `~/.bashrc` to `<this_folder>/bashrc_bak`. And replace it with a symlink to this folder.
 
-1) Copy the contents of bashrc and append it onto the end of your .bashrc or .bash_profile
-  `cat bashrc >> ~/.bashrc`
-  -or-
-  `cat bashrc >> ~/.bash_profile
+For uninstallation run `uninstall.sh`. This will remove the symlinks and reinstantiate the backup made earlier.
 
-2) Create your .d directories
-  `mkdir ~/.bash_aliases.d ~/.bash_completion.d ~/.bash_functions.d`
-
-3) Symlink any functionality you want from bash_magic into the appropriate directory
-  `cd ~/.bash_functions.d`
-  `ln -s <bash_magic project dir>/.bash_functions/eternal_history.sh`
-  <repeat as needed>
-
-4) Go through your existing .bashrc/.bash_profile and pull coherent chunks of functionality out and stuff it into new files in the appropriate directory
-
-5) Live a happier life knowing that your old messy bashrc is now a heck of a lot easier to understand.
 
