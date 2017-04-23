@@ -2,4 +2,4 @@
 set completion-ignore-case On
 
 # Tab completion for sudo
-complete -cf sudo
+#complete -cf sudo

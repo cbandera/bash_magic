@@ -2,7 +2,7 @@
 myfind() {
     find ./ -name "*$2*" -type "$1" | tee /tmp/my_ffound | cat -n
     FFOUND_PWD=${PWD}
-    FFOUND=($(cat /tmp/my_ffound))
+    readarray -t FFOUND<<<"$(cat /tmp/my_ffound )"
 }
 ff() { myfind "f" "$1"; }
 fd() { myfind "d" "$1"; }

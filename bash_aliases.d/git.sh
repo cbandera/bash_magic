@@ -1,6 +1,7 @@
 alias gitamend='git commit --amend --no-edit'
 alias gitrecommit='msg=$(git log --format="%s" -1) && git commit -m "$msg"'
 alias gitcligui='tig'
+alias gl="git log --oneline --graph --decorate --tags"
 
 _gitignore()
 {

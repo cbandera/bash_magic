@@ -1,1 +1,1 @@
-alias ack='ack-grep'
+#alias ack='ack-grep'

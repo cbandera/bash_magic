@@ -6,4 +6,4 @@ export ROSCONSOLE_CONFIG_FILE=~/.ros/rosconsole.cfg
 
 # Source ROS workspaces
 #source /home/bandera/repos/ros_catkin_ws/install/setup.bash
-source /opt/ros/kinetic/setup.bash
+#source /opt/ros/kinetic/setup.bash
