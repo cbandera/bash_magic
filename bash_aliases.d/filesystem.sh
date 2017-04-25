@@ -29,20 +29,46 @@ alias gvfs_fix='sudo umount ~/.gvfs && sudo rm -rf ~/.gvfs'
 #  done
 #}
 
-function up( )
+
+# cd up in the directory tree until specified directory (e.g. 'up home')
+upto ()
 {
-if [ "$#" -gt 0 ]; then
-	LIMIT=$1;
-else
-	LIMIT=1;
-fi
-P=$PWD
-for ((i=1; i <= LIMIT; i++))
+    if [ -z "$1" ]; then
+        return
+    fi
+    local upto=$1
+    cd "${PWD/\/$upto\/*//$upto}"
+}
+
+
+# This function is responsible for bash autocompletion
+_upto()
+{
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local d=${PWD//\//\ }
+    COMPREPLY=( $( compgen -W "$d" -- "$cur" ) )
+}
+complete -F _upto upto
+
+# jump down until specified directory. Will jump to first match.
+jd(){
+    if [ -z "$1" ]; then
+        echo "Usage: jd [directory]";
+        return 1
+    else
+        cd **"/$1"
+    fi
+}
+shopt -s globstar
+
+# Change directories by the specified number of dirs. (e.g. 'up 2' == 'cd ../..')
+function up {
+ups=""
+for i in $(seq 1 $1)
 do
-    P=$P/..
+        ups=$ups"../"
 done
-cd $P
-export MPWD=$P
+cd $ups
 }
 
 function bk( )

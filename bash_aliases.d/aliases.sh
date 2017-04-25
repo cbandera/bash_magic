@@ -19,7 +19,7 @@ alias uc='mrt maintenance credentials update_cache'
 
 
 # Editing Bashrc
-bs() { echo "Sourcing ~/.bashrc" && . ~/.bashrc; }
+bs() { echo "Sourcing ~/.bashrc" && source ~/.bashrc; }
 be() { $EDITOR $BM_ROOT_DIR; }
 ba() {
 	if [ "$#" -eq "0" ]; then
