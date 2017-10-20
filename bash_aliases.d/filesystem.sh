@@ -2,7 +2,7 @@ alias n='nautilus .'
 
 # Find top 5 big files
 alias findbig="find . -type f -exec ls -s {} \; | sort -n -r | head -5"
-alias dus='sudo du --block-size=MiB --max-depth=1 | sort -n'
+alias dus='du --block-size=MiB --max-depth=1 | sort -n'
 
 # Clear the screen and list file
 alias cls='clear;ls'
@@ -17,6 +17,8 @@ alias open='xdg-open'
 
 alias rs='rsync -r -u -h --progress --links'
 alias gvfs_fix='sudo umount ~/.gvfs && sudo rm -rf ~/.gvfs'
+
+alias dfl='df -lhT -t ext4'
 
 #function rm() {
 #  TRASH="~/.trash/$(date +%Y-%m-%d)/"
@@ -106,7 +108,7 @@ done;
 }
 
 function sedblk(){
-for FILE in `ack -f`; do
+for FILE in `ack -l $1`; do
 	sed -i -e "s/$1/$2/g" $FILE;
 done
 }

@@ -12,6 +12,7 @@ alias restart_networking='sudo ifdown eth0 && sudo ifup eth0'
 alias restartnetw='sudo service network-manager restart'
 alias ecl='bash -i -c "eclipse -vmargs -Xms2048m -Xmx8192m -XX:+UseParallelGC -XX:PermSize=2048M -XX:MaxPermSize=4096M"'
 alias agi='sudo apt-get install'
+alias ack='ack-grep'
 
 alias rl='roslaunch'
 alias bld='mrt catkin build -w'
