@@ -98,7 +98,7 @@ function cp_dtree(){
 }
 
 function mvblk(){
-for FILE in `ls`; do
+for FILE in `ls -a`; do
 	NEWNAME=${FILE/$1/$2};
 	if [ ! $NEWNAME == $FILE ]; then
 		echo "Moving $FILE to $NEWNAME";
